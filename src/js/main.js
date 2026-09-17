@@ -66,10 +66,15 @@ const timeTotal     = $("time-total");
 const btnPlay       = $("btn-play");
 const btnPrev       = $("btn-prev");
 const btnNext       = $("btn-next");
+const btnSpeed      = $("btn-speed");
 const btnReplay     = $("btn-replay");
 const unmuteBtn     = $("unmute");
 
 let index = 0;
+
+/* Speed control: cycle 1x -> 0.75x -> 0.5x -> 0.25x -> 1x */
+const SPEEDS = [1, 0.75, 0.5, 0.25];
+let speedIndex = 0;
 
 /* ---------- BOOT SEQUENCE ---------- */
 
@@ -177,6 +182,19 @@ btnPlay.addEventListener("click", () => {
 
 btnPrev.addEventListener("click", () => loadScene(index - 1, true));
 btnNext.addEventListener("click", () => loadScene(index + 1, true));
+
+btnSpeed.addEventListener("click", () => {
+  speedIndex = (speedIndex + 1) % SPEEDS.length;
+  const s = SPEEDS[speedIndex];
+  video.playbackRate = s;
+  btnSpeed.textContent = (s === 1 ? "1x" : s + "x");
+});
+
+/* Preserve chosen speed when a new scene loads */
+video.addEventListener("loadedmetadata", () => {
+  video.playbackRate = SPEEDS[speedIndex];
+});
+
 btnReplay.addEventListener("click", () => loadScene(0, true));
 
 unmuteBtn.addEventListener("click", () => {
@@ -192,6 +210,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft")  btnPrev.click();
   if (e.key === "r" || e.key === "R") btnReplay.click();
   if (e.key === "m" || e.key === "M") unmuteBtn.click();
+  if (e.key === "s" || e.key === "S") btnSpeed.click();
 });
 
 /* ---------- UTIL ---------- */

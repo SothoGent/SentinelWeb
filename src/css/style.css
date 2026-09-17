@@ -260,7 +260,16 @@ html, body {
   box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
 }
 
-.controls button:active { transform: scale(0.94); }
+#btn-speed {
+  width: 56px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+  border-color: var(--teal);
+}
+#btn-speed:hover {
+  box-shadow: 0 0 16px rgba(0, 255, 179, 0.35);
+}
 
 .timeline { display: flex; flex-direction: column; gap: 6px; }
 
