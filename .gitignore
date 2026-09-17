@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+python/logs/
+python/renders/
+python/
+images/*.raw.jpg
+videos/*.raw.mp4
+*.bak
+*.pre_fix*.bak
+*.prefix*.bak
+*.pyc
+__pycache__/
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+.vercel/

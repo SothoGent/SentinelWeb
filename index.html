@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENTINEL MESH // Off-Grid Situational Awareness</title>
+  <meta name="description" content="Cinematic demonstration of the SENTINEL Mesh concept. Enovate4Impact 2026. Stream 1, STEM Innovation Challenge." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <div id="boot">
+    <div class="boot-inner">
+      <div class="boot-mark">SENTINEL</div>
+      <div class="boot-sub">OFF-GRID SITUATIONAL AWARENESS</div>
+      <div class="boot-bar"><div id="boot-fill"></div></div>
+      <div class="boot-status" id="boot-status">initialising…</div>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+
+    <header class="hud-top">
+      <div class="hud-left">
+        <span class="dot live"></span>
+        <span class="hud-label">SENTINEL MESH</span>
+        <span class="hud-sep">//</span>
+        <span class="hud-value" id="scene-name">SCENE 00</span>
+      </div>
+      <div class="hud-right">
+        <span class="hud-label">ENOVATE4IMPACT 2026</span>
+        <span class="hud-sep">//</span>
+        <span class="hud-value">STREAM 1</span>
+      </div>
+    </header>
+
+    <main class="stage">
+      <video id="player" playsinline preload="auto" muted></video>
+
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+
+      <div class="overlay-info">
+        <div class="info-line" id="info-line-1"></div>
+        <div class="info-line" id="info-line-2"></div>
+      </div>
+
+      <div class="overlay-telemetry" id="telemetry"></div>
+
+      <button id="unmute" class="unmute" title="Sound on">SOUND</button>
+    </main>
+
+    <footer class="hud-bottom">
+      <div class="controls">
+        <button id="btn-prev" title="Previous scene">◀◀</button>
+        <button id="btn-play" title="Play / Pause">▶</button>
+        <button id="btn-next" title="Next scene">▶▶</button>
+        <button id="btn-replay" title="Replay from start">↺</button>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-track">
+          <div class="timeline-fill" id="timeline-fill"></div>
+        </div>
+        <div class="timeline-marks" id="timeline-marks"></div>
+      </div>
+
+      <div class="meta">
+        <span id="time-current">00:00</span>
+        <span class="hud-sep">/</span>
+        <span id="time-total">00:00</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>
