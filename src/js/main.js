@@ -1,6 +1,6 @@
 /* =========================================================
    SENTINEL MESH // PLAYER
-   Six-scene cinematic presentation. Auto-advances through
+  Seven-scene cinematic presentation. Auto-advances through
    the sequence, loops back to scene one at the end.
    ========================================================= */
 
@@ -46,6 +46,13 @@ const SCENES = [
     info: "EDGE INFERENCE ACTIVE",
     sub:  "ON-DEVICE CLASSIFICATION",
     tel:  "ALERT LATENCY 0.8 S"
+  },
+  {
+    file: "videos/scene_06_superiority.mp4",
+    name: "SUPERIORITY",
+    info: "COST // WEIGHT // LATENCY",
+    sub:  "SENTINEL VS LEGACY SYSTEMS",
+    tel:  "CAPABILITY SCORE"
   }
 ];
 
